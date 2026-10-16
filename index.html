@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание №4 (Bootstrap) — Юрьев Вячеслав</title>
+    
+    <!-- Подключение Bootstrap 4 CSS через CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <!-- Ваши кастомные стили -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <!-- ШАПКА САЙТА -->
+    <header id="site-header" class="bg-dark text-white py-3 w-100">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div id="logo-container" class="d-flex align-items-center mb-2 mb-md-0">
+                <img id="logo" src="image.jpg" alt="Логотип" width="50" height="50" class="rounded-circle mr-3" style="object-fit: cover;" />
+                <span id="site-title" class="font-weight-bold">Юрьев Вячеслав</span>
+            </div>
+            <nav id="top-nav" class="d-flex flex-column flex-md-row align-items-center">
+                <a href="#list-section" class="text-white ml-md-3">Ссылки</a>
+                <a href="#table-section" class="text-white ml-md-3">Таблица</a>
+                <a href="#form-section" class="text-white ml-md-3">Анкета</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ С СЕТКОЙ BOOTSTRAP -->
+    <main class="container my-4 bg-white p-4 shadow-sm">
+
+        <h1 class="mb-4">Задание №4 (Bootstrap Grid)</h1>
+
+        <!-- Использование сетки row и col с классами order для мобилок и десктопов -->
+        <div class="row content-flex-wrapper">
+            
+            <!-- Список гиперссылок -->
+            <section id="list-section" class="col-12 col-lg-8 list-block order-2 order-lg-1">
+                <h2>Маркированный список гиперссылок</h2>
+                <ul class="list-unstyled pl-3">
+                    <li><a href="http://kubsu.ru/">Главная страница КубГУ (http)</a></li>
+                    <li><a href="https://www.kubsu.ru/">Главная страница КубГУ (https)</a></li>
+                    <li><a href="https://www.kubsu.ru/"><img src="image.jpg" alt="Цветок" width="100" /></a></li>
+                    <li><a href="index.html">Сокращенная ссылка на главную страницу</a></li>
+                    <li><a href="#form-section">Ссылка на фрагмент текущей страницы (к форме)</a></li>
+                    <li><a href="http://example.com/?param1=val1&amp;param2=val2&amp;param3=val3">Ссылка с тремя параметрами в URL</a></li>
+                    <li><a href="http://example.com/?id=123">Ссылка с параметром id в URL</a></li>
+                    <li><a href="./page.html">Относительная ссылка на страницу в текущем каталоге</a></li>
+                    <li><a href="./about/index.html">Относительная ссылка на страницу в каталоге about</a></li>
+                    <li><a href="about/index.html">Относительная ссылка на страницу уровня выше</a></li> 
+                    <li>Это <a href="https://www.kubsu.ru/">контекстная гиперссылка</a> (на сайт университета) в тексте абзаца</li>
+                    <li><a href="https://www.ozon.ru/">Ссылка на фрагмент страницы стороннего сайта (Ozon)</a></li>
+                    <li>
+                        <img src="image.jpg" alt="Карта-изображение" usemap="#workmap" width="150" />
+                        <map name="workmap">
+                            <area shape="rect" coords="0,0,50,50" href="https://kubsu.ru" alt="Квадратная область" />
+                            <area shape="circle" coords="100,100,30" href="https://ya.ru" alt="Круглая область" />
+                        </map>
+                    </li>
+                    <li><a href="">Ссылка с пустым href</a></li>
+                    <li><a>Ссылка без href</a></li>
+                    <li><a href="https://example.com" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
+                    <li><noindex><a href="https://example.com">Ссылка, запрещенная для индексации поисковиками</a></noindex></li>
+                    <li>
+                        Нумерованный список ссылок с подписями title:
+                        <ol>
+                            <li><a href="https://kubsu.ru" title="Перейти на сайт КубГУ">КубГУ</a></li>
+                            <li><a href="https://ya.ru" title="Перейти на поисковик Яндекса">Яндекс</a></li>
+                        </ol>
+                    </li>
+                    <li><a href="ftp://username:password@ftp.example.com/file.zip">Ссылка на файл на FTP с авторизацией</a></li>
+                </ul>
+            </section>
+
+            <!-- Таблица данных -->
+            <section id="table-section" class="col-12 col-lg-4 table-block order-1 order-lg-2 mb-4 mb-lg-0">
+                <h2>Таблица данных</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Кол 1</th>
+                                <th>Кол 2</th>
+                                <th>Кол 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2" class="text-center">Объединенная ячейка</td>
+                                <td>Строка 1, Столбец 3</td>
+                            </tr>
+                            <tr>
+                                <td>Строка 2, С1</td>
+                                <td>Строка 2, С2</td>
+                                <td>Строка 2, С3</td>
+                            </tr>
+                            <tr>
+                                <td>Строка 3, С1</td>
+                                <td colspan="2" class="text-center">Объединенная (2 и 3)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+
+        <hr class="my-4" />
+
+        <!-- ФОРМА С ВАЛИДАЦИЕЙ -->
+        <section id="form-section">
+            <h2>Анкета пользователя</h2>
+            <form action="/" method="POST" class="needs-validation">
+                <div class="form-group">
+                    <label>ФИО:</label>
+                    <input type="text" name="fio" class="form-control" placeholder="Иванов Иван Иванович" required pattern="^[A-Za-zА-Яа-яЁё]+\s+[A-Za-zА-Яа-яЁё]+\s+[A-Za-zА-Яа-яЁё]+$" title="Введите ровно 3 слова (Фамилия Имя Отчество) только из букв!" />
+                </div>
+
+                <div class="form-group">
+                    <label>Телефон:</label>
+                    <input type="tel" name="phone" class="form-control" placeholder="+7 (800) 000-00-00" required pattern="[\+]?[0-9\s\-\(\)]+" title="Введите номер телефона" />
+                </div>
+
+                <div class="form-group">
+                    <label>E-mail:</label>
+                    <input type="email" name="email" class="form-control" placeholder="example@mail.ru" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Дата рождения:</label>
+                    <input type="date" name="birthdate" class="form-control" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Пол:</label><br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="male" checked required id="genderMale" />
+                        <label class="form-check-label" for="genderMale">Мужской</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="female" required id="genderFemale" />
+                        <label class="form-check-label" for="genderFemale">Женский</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Любимый язык программирования:</label>
+                    <select name="languages[]" multiple class="form-control" required>
+                        <option value="Pascal">Pascal</option>
+                        <option value="C">C</option>
+                        <option value="C++">C++</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="PHP">PHP</option>
+                        <option value="Python">Python</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Биография:</label>
+                    <textarea name="biography" class="form-control" rows="3" placeholder="Расскажите о себе..." required></textarea>
+                </div>
+
+                <div class="form-group form-check">
+                    <input type="checkbox" name="contract_agreed" class="form-check-input" id="contractCheck" required />
+                    <label class="form-check-label" for="contractCheck">С контрактом ознакомлен(а)</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- ПОДВАЛ САЙТА -->
+    <footer id="site-footer" class="bg-dark text-white text-center py-4 mt-4 w-100">
+        <p class="mb-0">&copy; 2026 Юрьев Вячеслав</p>
+    </footer>
+
+    <!-- JS скрипты Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
